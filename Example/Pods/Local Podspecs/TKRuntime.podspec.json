@@ -1,0 +1,22 @@
+{
+  "name": "TKRuntime",
+  "version": "0.1.0",
+  "summary": "A short description of TKRuntime.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/zhengxianda/TKRuntime",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "zhengxianda": "zhengxianda0512@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/zhengxianda/TKRuntime.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "TKRuntime/Classes/**/*"
+}

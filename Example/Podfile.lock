@@ -1,0 +1,19 @@
+PODS:
+  - Kiwi (3.0.0)
+  - TKRuntime (0.1.0)
+
+DEPENDENCIES:
+  - Kiwi
+  - TKRuntime (from `../`)
+
+EXTERNAL SOURCES:
+  TKRuntime:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Kiwi: fbeafef0f00e4d8f7dcb3420a4930afe70af77f7
+  TKRuntime: 0938831ef8b1185d1aa59b237f5e234c1853c3ef
+
+PODFILE CHECKSUM: 61ef781b60206dde70b9f06df2615d5b7de661ee
+
+COCOAPODS: 1.4.0

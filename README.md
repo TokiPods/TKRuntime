@@ -22,7 +22,7 @@ pod 'TKRuntime'
 
 ## Author
 
-zhengxianda, xianda.zheng@jiamiantech.com
+zhengxianda, zhengxianda0512@gmail.com
 
 ## License
 
