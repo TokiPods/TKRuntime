@@ -1,0 +1,12 @@
+use_frameworks!
+
+target 'TKRuntime_Example' do
+  pod 'TKRuntime', :path => '../'
+
+  target 'TKRuntime_Tests' do
+    inherit! :search_paths
+
+    pod 'Kiwi'
+    pod 'FBSnapshotTestCase'
+  end
+end
