@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "TKTypeEncoding.h"
 
 FOUNDATION_EXPORT double TKRuntimeVersionNumber;
 FOUNDATION_EXPORT const unsigned char TKRuntimeVersionString[];
