@@ -1,9 +1,9 @@
 {
   "name": "TKRuntime",
   "version": "0.1.0",
-  "summary": "A short description of TKRuntime.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/zhengxianda/TKRuntime",
+  "summary": "NSObject extension with NSObjCRuntime.",
+  "description": "NSObject extension with NSObjCRuntime, We can edit class at runloop",
+  "homepage": "https://github.com/ZhengXianda0512/TKRuntime",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
