@@ -10,6 +10,8 @@
 #endif
 #endif
 
+#import "NSObject+Method.h"
+#import "TKMethod.h"
 #import "TKTypeEncoding.h"
 
 FOUNDATION_EXPORT double TKRuntimeVersionNumber;
