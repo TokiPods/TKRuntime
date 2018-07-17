@@ -29,7 +29,9 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'TKRuntime/Classes/**/*'
-  
+
+  s.prefix_header_contents = '#import "TKTypeEncoding.h"'
+
   # s.resource_bundles = {
   #   'TKRuntime' => ['TKRuntime/Assets/*.png']
   # }
