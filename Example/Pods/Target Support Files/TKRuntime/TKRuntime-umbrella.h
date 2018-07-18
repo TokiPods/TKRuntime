@@ -12,6 +12,8 @@
 
 #import "NSObject+Method.h"
 #import "TKMethod.h"
+#import "NSObject+Property.h"
+#import "TKProperty.h"
 #import "TKEncoding.h"
 
 FOUNDATION_EXPORT double TKRuntimeVersionNumber;

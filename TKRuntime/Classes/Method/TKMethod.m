@@ -20,6 +20,27 @@
 
 @implementation TKMethod
 
+- (instancetype)initWithMethod:(Method)method
+{
+    self = [super init];
+    if (self) {
+        self.method = method;
+        
+        SEL sel = method_getName(method);
+        self.name = [NSString stringWithUTF8String:sel_getName(sel)];
+        self.imp = [self methodForSelector:sel];
+        self.returnType = (TKEncoding *)[NSString stringWithUTF8String:method_copyReturnType(method)];
+        
+        NSMutableArray<TKEncoding *> * argumentTypes = [NSMutableArray array];
+        unsigned int count = method_getNumberOfArguments(method);
+        for (int i = 0; i < count; i++) {
+            [argumentTypes addObject:(TKEncoding *)[NSString stringWithUTF8String:method_copyArgumentType(method, i)]];
+        }
+        self.argumentTypes = [argumentTypes copy];
+    }
+    return self;
+}
+
 - (instancetype)initWithName:(NSString *)name
                   returnType:(TKEncoding *)returnType
                argumentTypes:(NSArray<TKEncoding *> *)argumentTypes{
@@ -51,27 +72,6 @@
     self = [self initWithName:name returnType:returnType argumentTypes:argumentTypes];
     if (self) {
         self.imp = [[baseClass new] methodForSelector:NSSelectorFromString(baseName)];
-    }
-    return self;
-}
-
-- (instancetype)initWithMethod:(Method)method
-{
-    self = [super init];
-    if (self) {
-        self.method = method;
-        
-        SEL sel = method_getName(method);
-        self.name = [NSString stringWithUTF8String:sel_getName(sel)];
-        self.imp = [self methodForSelector:sel];
-        self.returnType = (TKEncoding *)[NSString stringWithUTF8String:method_copyReturnType(method)];
-        
-        NSMutableArray<TKEncoding *> * argumentTypes = [NSMutableArray array];
-        unsigned int count = method_getNumberOfArguments(method);
-        for (int i = 0; i < count; i++) {
-            [argumentTypes addObject:(TKEncoding *)[NSString stringWithUTF8String:method_copyArgumentType(method, i)]];
-        }
-        self.argumentTypes = [argumentTypes copy];
     }
     return self;
 }

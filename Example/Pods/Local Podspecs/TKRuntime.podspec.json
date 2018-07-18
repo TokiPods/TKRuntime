@@ -19,5 +19,5 @@
     "ios": "8.0"
   },
   "source_files": "TKRuntime/Classes/**/*",
-  "prefix_header_contents": "#import \"TKTypeEncoding.h\""
+  "prefix_header_contents": "#import \"TKEncoding.h\""
 }

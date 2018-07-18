@@ -1,0 +1,23 @@
+//
+//  TKProperty.h
+//  TKRuntime
+//
+//  Created by zhengxianda on 2018/7/17.
+//
+
+#import <Foundation/Foundation.h>
+
+#import <objc/runtime.h>
+
+@interface TKProperty : NSObject
+
+@property(nonatomic, assign, readonly, nullable) objc_property_t property;
+
+@property(nonatomic, strong, readonly) NSString * name;
+@property(nonatomic, strong, readonly) TKEncoding * type;
+@property(nonatomic, strong, readonly) NSArray<TKEncoding *> * ownership;
+
+- (instancetype)initWithProperty:(objc_property_t)property;
+- (instancetype)initWithName:(NSString *)name type:(TKEncoding *)type ownership:(NSArray<TKEncoding *> *)ownership;
+
+@end
