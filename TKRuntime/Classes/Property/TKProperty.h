@@ -7,6 +7,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "TKEncoding.h"
+
 #import <objc/runtime.h>
 
 @interface TKProperty : NSObject

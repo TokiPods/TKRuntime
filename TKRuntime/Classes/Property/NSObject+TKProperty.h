@@ -14,5 +14,6 @@
 + (BOOL)addProperty:(TKProperty *)property;
 
 + (NSArray<TKProperty *> *)getPropertyList;
++ (TKProperty *)property:(NSString *)name;
 
 @end

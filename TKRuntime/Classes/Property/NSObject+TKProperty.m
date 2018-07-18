@@ -73,4 +73,13 @@
     return [propertyList copy];
 }
 
++ (TKProperty *)property:(NSString *)name{
+    for (TKProperty * property in [self getPropertyList]) {
+        if ([property.name isEqualToString:name]) {
+            return property;
+        }
+    }
+    return nil;
+}
+
 @end

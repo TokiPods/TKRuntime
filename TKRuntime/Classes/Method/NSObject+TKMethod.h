@@ -14,5 +14,6 @@
 + (BOOL)addMethod:(TKMethod *)method;
 
 + (NSArray<TKMethod *> *)getMethodList;
++ (TKMethod *)method:(NSString *)name;
 
 @end

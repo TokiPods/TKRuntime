@@ -38,4 +38,13 @@
     return [methodList copy];
 }
 
++ (TKMethod *)method:(NSString *)name{
+    for (TKMethod * method in [self getMethodList]) {
+        if ([method.name isEqualToString:name]) {
+            return method;
+        }
+    }
+    return nil;
+}
+
 @end
