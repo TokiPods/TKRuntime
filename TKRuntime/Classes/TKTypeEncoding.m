@@ -83,7 +83,7 @@
     return (TKTypeEncoding *)@"?";
 }
 
-#pragma mark - ParamDecorate
+#pragma mark - ArgumentsDecorate
 
 + (TKTypeEncoding *)consts{
     return (TKTypeEncoding *)@"r";

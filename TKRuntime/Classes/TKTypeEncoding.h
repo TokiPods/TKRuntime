@@ -41,7 +41,7 @@
 
 @end
 
-@interface TKTypeEncoding (ParamDecorate)
+@interface TKTypeEncoding (ArgumentsDecorate)
 
 + (TKTypeEncoding *)consts;
 + (TKTypeEncoding *)ins;
