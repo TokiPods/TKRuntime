@@ -28,6 +28,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '8.0'
 
+  s.public_header_files = 'Pod/Classes/**/*.h'
   s.source_files = 'TKRuntime/Classes/**/*'
 
   s.prefix_header_contents = '#import "TKEncoding.h"'
@@ -36,7 +37,6 @@ Pod::Spec.new do |s|
   #   'TKRuntime' => ['TKRuntime/Assets/*.png']
   # }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
 end
