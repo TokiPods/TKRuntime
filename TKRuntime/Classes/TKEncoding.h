@@ -9,6 +9,10 @@
 
 @interface TKEncoding : NSString
 
+@end
+
+@interface TKEncoding (Type)
+
 + (TKEncoding *)character;
 + (TKEncoding *)integer;
 + (TKEncoding *)shortint;
@@ -27,6 +31,7 @@
 + (TKEncoding *)voids;
 + (TKEncoding *)string;
 + (TKEncoding *)object;
++ (TKEncoding *)objectWith:(Class)cls;
 + (TKEncoding *)classes;
 + (TKEncoding *)selector;
 
@@ -41,7 +46,7 @@
 
 @end
 
-@interface TKEncoding (ArgumentsDecorate)
+@interface TKEncoding (Method)
 
 + (TKEncoding *)consts;
 + (TKEncoding *)ins;
@@ -53,7 +58,7 @@
 
 @end
 
-@interface TKEncoding (PropertyDecorate)
+@interface TKEncoding (Ownership)
 
 + (TKEncoding *) atomic;
 + (TKEncoding *) nonatomic;

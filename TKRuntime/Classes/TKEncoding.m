@@ -9,6 +9,8 @@
 
 @implementation TKEncoding
 
+#pragma mark - Type
+
 + (TKEncoding *)character{
     return (TKEncoding *)@"c";
 }
@@ -57,6 +59,9 @@
 + (TKEncoding *)object{
     return (TKEncoding *)@"@";
 }
++ (TKEncoding *)objectWithClass:(Class)cls{
+    return (TKEncoding *)[NSString stringWithFormat:@"@\"%@\"]", cls];
+}
 + (TKEncoding *)classes{
     return (TKEncoding *)@"#";
 }
@@ -83,7 +88,7 @@
     return (TKEncoding *)@"?";
 }
 
-#pragma mark - ArgumentsDecorate
+#pragma mark - Method
 
 + (TKEncoding *)consts{
     return (TKEncoding *)@"r";
@@ -107,7 +112,7 @@
     return (TKEncoding *)@"V";
 }
 
-#pragma mark - PropertyDecorate
+#pragma mark - Ownership
 
 + (TKEncoding *)atomic{
     return (TKEncoding *)@"";
