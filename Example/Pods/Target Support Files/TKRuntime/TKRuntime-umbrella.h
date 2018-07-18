@@ -12,6 +12,7 @@
 
 #import "NSObject+Method.h"
 #import "TKMethod.h"
+#import "NSObject+ObjCRuntime.h"
 #import "NSObject+Property.h"
 #import "TKProperty.h"
 #import "NSObject+Synthesize.h"
