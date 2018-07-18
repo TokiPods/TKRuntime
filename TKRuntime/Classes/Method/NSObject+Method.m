@@ -12,7 +12,7 @@
 + (BOOL)addMethod:(TKMethod *)method{
     SEL sel = NSSelectorFromString(method.name);
     IMP imp = method.imp;
-    const char *types = [[[@[method.returnType, TKTypeEncoding.object, TKTypeEncoding.selector]
+    const char *types = [[[@[method.returnType, TKEncoding.object, TKEncoding.selector]
                            arrayByAddingObjectsFromArray:method.argumentTypes]
                           componentsJoinedByString:@""]
                          UTF8String];

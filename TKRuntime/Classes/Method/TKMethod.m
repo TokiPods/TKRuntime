@@ -13,16 +13,16 @@
 
 @property(nonatomic, assign) IMP imp;
 @property(nonatomic, strong) NSString * name;
-@property(nonatomic, strong) TKTypeEncoding * returnType;
-@property(nonatomic, strong) NSArray<TKTypeEncoding *> * argumentTypes;
+@property(nonatomic, strong) TKEncoding * returnType;
+@property(nonatomic, strong) NSArray<TKEncoding *> * argumentTypes;
 
 @end
 
 @implementation TKMethod
 
 - (instancetype)initWithName:(NSString *)name
-                  returnType:(TKTypeEncoding *)returnType
-               argumentTypes:(NSArray<TKTypeEncoding *> *)argumentTypes{
+                  returnType:(TKEncoding *)returnType
+               argumentTypes:(NSArray<TKEncoding *> *)argumentTypes{
     self = [super init];
     if (self) {
         self.name = name;
@@ -34,8 +34,8 @@
 
 - (instancetype)initWithName:(NSString *)name
                          imp:(IMP)imp
-                  returnType:(TKTypeEncoding *)returnType
-                  argumentTypes:(NSArray<TKTypeEncoding *> *)argumentTypes{
+                  returnType:(TKEncoding *)returnType
+                  argumentTypes:(NSArray<TKEncoding *> *)argumentTypes{
     self = [self initWithName:name returnType:returnType argumentTypes:argumentTypes];
     if (self) {
         self.imp = imp;
@@ -46,8 +46,8 @@
 - (instancetype)initWithName:(NSString *)name
                    baseClass:(Class)baseClass
                     baseName:(NSString *)baseName
-                  returnType:(TKTypeEncoding *)returnType
-                  argumentTypes:(NSArray<TKTypeEncoding *> *)argumentTypes{
+                  returnType:(TKEncoding *)returnType
+                  argumentTypes:(NSArray<TKEncoding *> *)argumentTypes{
     self = [self initWithName:name returnType:returnType argumentTypes:argumentTypes];
     if (self) {
         self.imp = [[baseClass new] methodForSelector:NSSelectorFromString(baseName)];
@@ -64,12 +64,12 @@
         SEL sel = method_getName(method);
         self.name = [NSString stringWithUTF8String:sel_getName(sel)];
         self.imp = [self methodForSelector:sel];
-        self.returnType = (TKTypeEncoding *)[NSString stringWithUTF8String:method_copyReturnType(method)];
+        self.returnType = (TKEncoding *)[NSString stringWithUTF8String:method_copyReturnType(method)];
         
-        NSMutableArray<TKTypeEncoding *> * argumentTypes = [NSMutableArray array];
+        NSMutableArray<TKEncoding *> * argumentTypes = [NSMutableArray array];
         unsigned int count = method_getNumberOfArguments(method);
         for (int i = 0; i < count; i++) {
-            [argumentTypes addObject:(TKTypeEncoding *)[NSString stringWithUTF8String:method_copyArgumentType(method, i)]];
+            [argumentTypes addObject:(TKEncoding *)[NSString stringWithUTF8String:method_copyArgumentType(method, i)]];
         }
         self.argumentTypes = [argumentTypes copy];
     }

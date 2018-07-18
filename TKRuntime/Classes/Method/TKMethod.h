@@ -15,20 +15,20 @@
 
 @property(nonatomic, strong, readonly) NSString * name;
 @property(nonatomic, assign, readonly) IMP imp;
-@property(nonatomic, strong, readonly) TKTypeEncoding * returnType;
-@property(nonatomic, strong, readonly) NSArray<TKTypeEncoding *> * argumentTypes;
+@property(nonatomic, strong, readonly) TKEncoding * returnType;
+@property(nonatomic, strong, readonly) NSArray<TKEncoding *> * argumentTypes;
 
 - (instancetype)initWithMethod:(Method)method;
 
 - (instancetype)initWithName:(NSString *)name
                          imp:(IMP)imp
-                  returnType:(TKTypeEncoding *)returnType
-                  argumentTypes:(NSArray<TKTypeEncoding *> *)argumentTypes;
+                  returnType:(TKEncoding *)returnType
+                  argumentTypes:(NSArray<TKEncoding *> *)argumentTypes;
 
 - (instancetype)initWithName:(NSString *)name
                    baseClass:(Class)baseClass
                     baseName:(NSString *)baseName
-                  returnType:(TKTypeEncoding *)returnType
-                  argumentTypes:(NSArray<TKTypeEncoding *> *)argumentTypes;
+                  returnType:(TKEncoding *)returnType
+                  argumentTypes:(NSArray<TKEncoding *> *)argumentTypes;
 
 @end

@@ -12,7 +12,7 @@
 
 #import "NSObject+Method.h"
 #import "TKMethod.h"
-#import "TKTypeEncoding.h"
+#import "TKEncoding.h"
 
 FOUNDATION_EXPORT double TKRuntimeVersionNumber;
 FOUNDATION_EXPORT const unsigned char TKRuntimeVersionString[];
