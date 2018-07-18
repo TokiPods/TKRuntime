@@ -14,7 +14,9 @@
 #import "TKMethod.h"
 #import "NSObject+Property.h"
 #import "TKProperty.h"
+#import "NSObject+Synthesize.h"
 #import "TKEncoding.h"
+#import "NSString+HeadCharacter.h"
 
 FOUNDATION_EXPORT double TKRuntimeVersionNumber;
 FOUNDATION_EXPORT const unsigned char TKRuntimeVersionString[];

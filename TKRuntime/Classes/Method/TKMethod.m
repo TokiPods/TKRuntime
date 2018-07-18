@@ -66,12 +66,12 @@
 
 - (instancetype)initWithName:(NSString *)name
                    baseClass:(Class)baseClass
-                    baseName:(NSString *)baseName
+                    baseName:(NSString *_Nullable)baseName
                   returnType:(TKEncoding *)returnType
                   argumentTypes:(NSArray<TKEncoding *> *)argumentTypes{
     self = [self initWithName:name returnType:returnType argumentTypes:argumentTypes];
     if (self) {
-        self.imp = [[baseClass new] methodForSelector:NSSelectorFromString(baseName)];
+        self.imp = [[baseClass new] methodForSelector:NSSelectorFromString(baseName?:name)];
     }
     return self;
 }

@@ -27,7 +27,7 @@
 
 - (instancetype)initWithName:(NSString *)name
                    baseClass:(Class)baseClass
-                    baseName:(NSString *)baseName
+                    baseName:(NSString * _Nullable)baseName
                   returnType:(TKEncoding *)returnType
                   argumentTypes:(NSArray<TKEncoding *> *)argumentTypes;
 
