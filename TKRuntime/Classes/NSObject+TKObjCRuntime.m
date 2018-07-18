@@ -1,11 +1,11 @@
 //
-//  NSObject+ObjCRuntime.m
+//  NSObject+TKObjCRuntime.m
 //  TKRuntime
 //
 //  Created by zhengxianda on 2018/7/18.
 //
 
-#import "NSObject+ObjCRuntime.h"
+#import "NSObject+TKObjCRuntime.h"
 
 @implementation NSObject (ObjCRuntime)
 

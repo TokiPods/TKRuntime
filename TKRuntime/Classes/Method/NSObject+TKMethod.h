@@ -1,5 +1,5 @@
 //
-//  NSObject+Method.h
+//  NSObject+TKMethod.h
 //  Kiwi
 //
 //  Created by zhengxianda on 2018/7/17.

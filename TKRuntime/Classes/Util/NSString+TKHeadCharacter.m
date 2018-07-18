@@ -1,11 +1,11 @@
 //
-//  NSString+HeadCharacter.m
+//  NSString+TKHeadCharacter.m
 //  TKRuntime
 //
 //  Created by zhengxianda on 2018/7/18.
 //
 
-#import "NSString+HeadCharacter.h"
+#import "NSString+TKHeadCharacter.h"
 
 @implementation NSString (HeadCharacter)
 

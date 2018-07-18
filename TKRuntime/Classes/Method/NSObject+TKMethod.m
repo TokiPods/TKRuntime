@@ -1,11 +1,11 @@
 //
-//  NSObject+Method.m
+//  NSObject+TKMethod.m
 //  Kiwi
 //
 //  Created by zhengxianda on 2018/7/17.
 //
 
-#import "NSObject+Method.h"
+#import "NSObject+TKMethod.h"
 
 @implementation NSObject (Method)
 

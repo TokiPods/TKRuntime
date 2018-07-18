@@ -1,11 +1,11 @@
 //
-//  NSObject+Property.m
+//  NSObject+TKProperty.m
 //  TKRuntime
 //
 //  Created by zhengxianda on 2018/7/18.
 //
 
-#import "NSObject+Property.h"
+#import "NSObject+TKProperty.h"
 
 @implementation NSObject (Property)
 

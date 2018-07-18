@@ -10,14 +10,14 @@
 #endif
 #endif
 
-#import "NSObject+Method.h"
+#import "NSObject+TKMethod.h"
 #import "TKMethod.h"
-#import "NSObject+ObjCRuntime.h"
-#import "NSObject+Property.h"
+#import "NSObject+TKObjCRuntime.h"
+#import "NSObject+TKProperty.h"
 #import "TKProperty.h"
-#import "NSObject+Synthesize.h"
+#import "NSObject+TKSynthesize.h"
 #import "TKEncoding.h"
-#import "NSString+HeadCharacter.h"
+#import "NSString+TKHeadCharacter.h"
 
 FOUNDATION_EXPORT double TKRuntimeVersionNumber;
 FOUNDATION_EXPORT const unsigned char TKRuntimeVersionString[];

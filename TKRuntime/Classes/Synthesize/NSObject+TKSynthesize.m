@@ -1,14 +1,14 @@
 //
-//  NSObject+Synthesize.m
+//  NSObject+TKSynthesize.m
 //  TKRuntime
 //
 //  Created by zhengxianda on 2018/7/18.
 //
 
-#import "NSObject+Synthesize.h"
+#import "NSObject+TKSynthesize.h"
 
-#import "NSString+HeadCharacter.h"
-#import "NSObject+Method.h"
+#import "NSString+TKHeadCharacter.h"
+#import "NSObject+TKMethod.h"
 
 #import <objc/runtime.h>
 
