@@ -218,7 +218,6 @@
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
 				DE911D8554D2A37D6C42E9E4 /* [CP] Embed Pods Frameworks */,
-				0364F6019B64D32A31E25B2C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -238,7 +237,6 @@
 				6003F5AB195388D20070C39A /* Frameworks */,
 				6003F5AC195388D20070C39A /* Resources */,
 				B148C8FFB7EBC2E529E609D7 /* [CP] Embed Pods Frameworks */,
-				87927FEFC3C5C104D354D7BD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -310,21 +308,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0364F6019B64D32A31E25B2C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TKRuntime_Example/Pods-TKRuntime_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		2804F0ACABC69560FE6D6CF3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -359,21 +342,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		87927FEFC3C5C104D354D7BD /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TKRuntime_Tests/Pods-TKRuntime_Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B148C8FFB7EBC2E529E609D7 /* [CP] Embed Pods Frameworks */ = {

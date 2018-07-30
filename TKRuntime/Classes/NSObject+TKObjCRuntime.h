@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
+#import "NSObject+TKClass.h"
 #import "NSObject+TKMethod.h"
 #import "NSObject+TKProperty.h"
 #import "NSObject+TKSynthesize.h"

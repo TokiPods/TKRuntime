@@ -6,9 +6,13 @@ DEPENDENCIES:
   - Kiwi
   - TKRuntime (from `../`)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Kiwi
+
 EXTERNAL SOURCES:
   TKRuntime:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
   Kiwi: fbeafef0f00e4d8f7dcb3420a4930afe70af77f7
@@ -16,4 +20,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 61ef781b60206dde70b9f06df2615d5b7de661ee
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3

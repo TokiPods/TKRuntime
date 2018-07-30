@@ -15,7 +15,22 @@ SPEC_BEGIN(InitialTests)
 
 describe(@"My initial tests", ^{
 
-  context(@"will pass", ^{
+    context(@"Class", ^{
+        
+        Class superClass = [NSObject class];
+        NSString *className = @"NewClass";
+        
+        TKClass *cls = [[TKClass alloc] initWithName:className superClass:superClass];
+        
+        Class newClass = [NSObject addClass:cls];
+        id instance = [[newClass alloc] init];
+        
+        it(@"check instance type", ^{
+            [[@([instance isKindOfClass:NSClassFromString(className)]) should] beYes];
+        });
+    });
+    
+  context(@"Property", ^{
     
       NSString *stringName = @"string";
       NSString *integerName = @"integer";

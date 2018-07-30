@@ -10,6 +10,8 @@
 #endif
 #endif
 
+#import "NSObject+TKClass.h"
+#import "TKClass.h"
 #import "NSObject+TKMethod.h"
 #import "TKMethod.h"
 #import "NSObject+TKObjCRuntime.h"
