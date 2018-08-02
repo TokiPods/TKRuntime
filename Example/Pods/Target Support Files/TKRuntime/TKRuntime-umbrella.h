@@ -12,6 +12,8 @@
 
 #import "NSObject+TKClass.h"
 #import "TKClass.h"
+#import "NSObject+TKIvar.h"
+#import "TKIvar.h"
 #import "NSObject+TKMethod.h"
 #import "TKMethod.h"
 #import "NSObject+TKObjCRuntime.h"

@@ -16,17 +16,48 @@ SPEC_BEGIN(InitialTests)
 describe(@"My initial tests", ^{
 
     context(@"Class", ^{
+        NSString *className = @"NewClass";
+        NSString *stringName = @"string";
+        NSString *integerName = @"integer";
         
         Class superClass = [NSObject class];
-        NSString *className = @"NewClass";
-        
         TKClass *cls = [[TKClass alloc] initWithName:className superClass:superClass];
-        
         Class newClass = [NSObject addClass:cls];
+        
+        TKIvar *stringIvar = [[TKIvar alloc] initWithName:stringName type:[TKEncoding objectWithClass:[NSString class]]];
+        TKIvar *integerIvar = [[TKIvar alloc] initWithName:integerName type:[TKEncoding integer]];
+        [newClass addIvar:stringIvar];
+        [newClass addIvar:integerIvar];
+        
+        TKProperty * stringProperty = [[TKProperty alloc] initWithName:stringName type:TKEncoding.string ownership:@[TKEncoding.nonatomic, TKEncoding.strong]];
+        TKProperty * intProperty = [[TKProperty alloc] initWithName:integerName type:TKEncoding.integer ownership:@[TKEncoding.nonatomic, TKEncoding.assign]];
+        [newClass addProperty:stringProperty];
+        [newClass addProperty:intProperty];
+        
+        [newClass addSynthesizeMethod:stringName];
+        [newClass addSynthesizeMethod:integerName];
+        
+        [NSObject registerClass:newClass];
         id instance = [[newClass alloc] init];
         
         it(@"check instance type", ^{
             [[@([instance isKindOfClass:NSClassFromString(className)]) should] beYes];
+        });
+        
+        it(@"check ivar", ^{
+            NSString * stringValue = @"Yahaha";
+            [instance performSelector:NSSelectorFromString(@"setString:") withObject:stringValue];
+            NSString * stringResult = [instance performSelector:NSSelectorFromString(@"string")];
+            [[@([stringResult isEqualToString:stringValue]) should] beYes];
+            
+//            int integerValue = 512;
+//            SEL setIntegerSel = NSSelectorFromString(@"setInteger:");
+//            void(*setInteger)(id, SEL, int) = (void(*)(id, SEL, int))[instance methodForSelector:setIntegerSel];
+//            SEL integerSel = NSSelectorFromString(@"integer");
+//            int(*integer)(id, SEL) = (int(*)(id, SEL))[instance methodForSelector:integerSel];
+//            setInteger(instance, setIntegerSel, integerValue);
+//            int integerResult = integer(instance, integerSel);
+//            [[@(integerResult == integerValue) should] beYes];
         });
     });
     

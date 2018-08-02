@@ -31,7 +31,7 @@
 + (TKEncoding *)voids;
 + (TKEncoding *)string;
 + (TKEncoding *)object;
-+ (TKEncoding *)objectWith:(Class)cls;
++ (TKEncoding *)objectWithClass:(Class)cls;
 + (TKEncoding *)classes;
 + (TKEncoding *)selector;
 

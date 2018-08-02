@@ -13,4 +13,6 @@
 
 + (Class)addClass:(TKClass *)classes;
 
++ (void)registerClass:(Class)cls;
+
 @end

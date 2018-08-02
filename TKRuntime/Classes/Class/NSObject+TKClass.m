@@ -14,9 +14,11 @@
     
     Class cls = objc_allocateClassPair(classes.superClass, className, 0);
     
-    objc_registerClassPair(cls);
-    
     return cls;
+}
+
++ (void)registerClass:(Class)cls{
+    objc_registerClassPair(cls);
 }
 
 @end

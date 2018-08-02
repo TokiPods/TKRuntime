@@ -11,4 +11,6 @@
 
 + (BOOL)addTempletSynthesizeMethod:(NSString *)name from:(Class)baseClass;
 
++ (BOOL)addSynthesizeMethod:(NSString *)name;
+
 @end
