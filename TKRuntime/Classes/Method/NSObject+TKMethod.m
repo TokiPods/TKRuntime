@@ -21,7 +21,7 @@
     NSArray<TKMethod *> * localMethodList = [self getMethodList];
     for (TKMethod *localMethod in localMethodList) {
         if ([localMethod.name isEqualToString:method.name]) {
-            return class_replaceMethod(self, sel, imp, types);
+            return class_replaceMethod(self, sel, imp, types) ? YES : NO;
         }
     }
     return class_addMethod(self, sel, imp, types);

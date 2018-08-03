@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '10.0'
 
-  s.public_header_files = 'Pod/Classes/**/*.h'
+  s.public_header_files = 'TKRuntime/Classes/**/*.h'
   s.source_files = 'TKRuntime/Classes/**/*'
 
   s.prefix_header_contents = '#import "TKEncoding.h"'
