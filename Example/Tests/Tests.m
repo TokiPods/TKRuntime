@@ -45,19 +45,33 @@ describe(@"My initial tests", ^{
         });
         
         it(@"check ivar", ^{
+            NSLog(@"%@", [newClass getIvarList]);
+            
+            //NSObject
             NSString * stringValue = @"Yahaha";
-            [instance performSelector:NSSelectorFromString(@"setString:") withObject:stringValue];
-            NSString * stringResult = [instance performSelector:NSSelectorFromString(@"string")];
+            
+            SEL setStringSel = NSSelectorFromString(@"setString:");
+            void(*setString)(id, SEL, NSString*) = (void(*)(id, SEL, NSString*))[instance methodForSelector:setStringSel];
+            setString(instance, setStringSel, stringValue);
+            
+            SEL stringSel = NSSelectorFromString(@"string");
+            NSString*(*string)(id, SEL) = (NSString*(*)(id, SEL))[instance methodForSelector:stringSel];
+            NSString * stringResult = string(instance, stringSel);
+            
             [[@([stringResult isEqualToString:stringValue]) should] beYes];
             
-//            int integerValue = 512;
-//            SEL setIntegerSel = NSSelectorFromString(@"setInteger:");
-//            void(*setInteger)(id, SEL, int) = (void(*)(id, SEL, int))[instance methodForSelector:setIntegerSel];
-//            SEL integerSel = NSSelectorFromString(@"integer");
-//            int(*integer)(id, SEL) = (int(*)(id, SEL))[instance methodForSelector:integerSel];
-//            setInteger(instance, setIntegerSel, integerValue);
-//            int integerResult = integer(instance, integerSel);
-//            [[@(integerResult == integerValue) should] beYes];
+            //integer
+            int integerValue = 512;
+            
+            SEL setIntegerSel = NSSelectorFromString(@"setInteger:");
+            void(*setInteger)(id, SEL, int) = (void(*)(id, SEL, int))[instance methodForSelector:setIntegerSel];
+            setInteger(instance, setIntegerSel, integerValue);
+            
+            SEL integerSel = NSSelectorFromString(@"integer");
+            int(*integer)(id, SEL) = (int(*)(id, SEL))[instance methodForSelector:integerSel];
+            int integerResult = integer(instance, integerSel);
+            
+            [[@(integerResult == integerValue) should] beYes];
         });
     });
     
