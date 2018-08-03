@@ -7,10 +7,12 @@
 
 #import <Foundation/Foundation.h>
 
+#import "TKSynthesize.h"
+
 @interface NSObject (SynthesizeTemplet)
 
 + (BOOL)addTempletSynthesizeMethod:(NSString *)name from:(Class)baseClass;
 
-+ (BOOL)addSynthesizeMethod:(NSString *)name;
++ (BOOL)addSynthesize:(TKSynthesize *)synthesize;
 
 @end

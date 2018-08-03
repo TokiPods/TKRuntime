@@ -20,6 +20,7 @@
 #import "NSObject+TKProperty.h"
 #import "TKProperty.h"
 #import "NSObject+TKSynthesize.h"
+#import "TKSynthesize.h"
 #import "TKEncoding.h"
 #import "NSString+TKHeadCharacter.h"
 
