@@ -24,13 +24,13 @@ describe(@"My initial tests", ^{
         TKClass *cls = [[TKClass alloc] initWithName:className superClass:superClass];
         Class newClass = [NSObject addClass:cls];
         
-        TKIvar *stringIvar = [[TKIvar alloc] initWithName:stringName type:[TKEncoding objectWithClass:[NSString class]]];
-        TKIvar *integerIvar = [[TKIvar alloc] initWithName:integerName type:[TKEncoding integer]];
+        TKIvar *stringIvar = [[TKIvar alloc] initWithName:stringName type:TK_Encode(NSString *)];
+        TKIvar *integerIvar = [[TKIvar alloc] initWithName:integerName type:TK_Encode(int)];
         [newClass addIvar:stringIvar];
         [newClass addIvar:integerIvar];
         
-        TKProperty * stringProperty = [[TKProperty alloc] initWithName:stringName type:TKEncoding.string ownership:@[TKEncoding.nonatomic, TKEncoding.strong]];
-        TKProperty * intProperty = [[TKProperty alloc] initWithName:integerName type:TKEncoding.integer ownership:@[TKEncoding.nonatomic, TKEncoding.assign]];
+        TKProperty * stringProperty = [[TKProperty alloc] initWithName:stringName type:TK_Encode(char*) ownership:@[TKEncoding.nonatomic, TKEncoding.strong]];
+        TKProperty * intProperty = [[TKProperty alloc] initWithName:integerName type:TK_Encode(int) ownership:@[TKEncoding.nonatomic, TKEncoding.assign]];
         [newClass addProperty:stringProperty];
         [newClass addProperty:intProperty];
         

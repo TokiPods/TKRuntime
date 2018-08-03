@@ -7,42 +7,29 @@
 
 #import <Foundation/Foundation.h>
 
+#define TK_Encode(Type) \
+({\
+[NSString stringWithUTF8String:@encode(Type)];\
+})
+
+#define TK_PropertyEncode(Type) \
+({\
+NSString * type = TK_Encode(Type);\
+if ([type isEqualToString:@"@"]) {\
+Type a;\
+NSString * clsEncode = [NSString stringWithUTF8String:@encode(typeof(*a))];\
+NSString * clsName = [[clsEncode substringToIndex:clsEncode.length - 3] substringFromIndex:1];\
+type = [NSString stringWithFormat:@"@\"%@\"", clsName];\
+}\
+type;\
+})
+
+#define TK_SelectorEncode(returnType, ...)\
+({\
+[self combine:returnType, TK_Encode(id), TK_Encode(SEL), __VA_ARGS__, nil];\
+})\
+
 @interface TKEncoding : NSString
-
-@end
-
-@interface TKEncoding (Type)
-
-+ (TKEncoding *)character;
-+ (TKEncoding *)integer;
-+ (TKEncoding *)shortint;
-+ (TKEncoding *)longint;
-+ (TKEncoding *)longlongint;
-
-+ (TKEncoding *)unsignedchar;
-+ (TKEncoding *)unsignedint;
-+ (TKEncoding *)unsignedshort;
-+ (TKEncoding *)unsignedlong;
-+ (TKEncoding *)unsignedlonglong;
-+ (TKEncoding *)unsignedfloat;
-+ (TKEncoding *)unsigneddouble;
-
-+ (TKEncoding *)boolean;
-+ (TKEncoding *)voids;
-+ (TKEncoding *)string;
-+ (TKEncoding *)object;
-+ (TKEncoding *)objectWithClass:(Class)cls;
-+ (TKEncoding *)classes;
-+ (TKEncoding *)selector;
-
-+ (TKEncoding *)arrayWith:(TKEncoding *)type count:(NSInteger)count;
-+ (TKEncoding *)structureWith:(NSString *)name values:(NSArray<TKEncoding *> *)values;
-+ (TKEncoding *)unionsWith:(NSString *)name values:(NSArray<TKEncoding *> *)values;
-
-+ (TKEncoding *)typepointWith:(TKEncoding *)type;
-
-+ (TKEncoding *)bnum;
-+ (TKEncoding *)unknown;
 
 @end
 

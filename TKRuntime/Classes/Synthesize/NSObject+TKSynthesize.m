@@ -52,7 +52,7 @@
     BOOL flag = YES;
     
     TKIvar *ivar = [self ivar:[NSString stringWithUTF8String:name]];
-    if ([ivar.type hasPrefix:TKEncoding.object] || [ivar.type hasPrefix:TKEncoding.classes]) {
+    if ([ivar.type hasPrefix:TK_Encode(id)] || [ivar.type hasPrefix:TK_Encode(Class)]) {
         flag &= class_addMethod(self, NSSelectorFromString([NSString stringWithUTF8String:name]), (IMP)getter, "@@:");
         flag &= class_addMethod(self, NSSelectorFromString([NSString stringWithFormat:@"set%@:", [[NSString stringWithUTF8String:name] uppercaseHeadString]]), (IMP)setter, "v@:@");
     }else{

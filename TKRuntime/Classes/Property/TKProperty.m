@@ -12,8 +12,8 @@
 @property(nonatomic, assign, nullable) objc_property_t property;
 
 @property(nonatomic, strong) NSString * name;
-@property(nonatomic, strong) TKEncoding * type;
-@property(nonatomic, strong) NSArray<TKEncoding *> * ownership;
+@property(nonatomic, strong) NSString * type;
+@property(nonatomic, strong) NSArray<NSString *> * ownership;
 
 @end
 
@@ -30,17 +30,17 @@
         NSArray<NSString *> *attributeList = [[NSString stringWithUTF8String:propertyAttributes]
                                               componentsSeparatedByString:@","];
         NSString *attributeType = attributeList.firstObject;
-        self.type = (TKEncoding *)[attributeType substringWithRange:
-                                   [attributeType containsString:@"T@\""] ?
-                                   NSMakeRange(3, attributeType.length-4) :
-                                   NSMakeRange(1, attributeType.length-1)];
+        self.type = [attributeType substringWithRange:
+                     [attributeType containsString:@"T@\""] ?
+                     NSMakeRange(3, attributeType.length-4) :
+                     NSMakeRange(1, attributeType.length-1)];
         
         self.ownership = [[[attributeList mutableCopy] subarrayWithRange:NSMakeRange(1, attributeList.count - 2)] copy];
     }
     return self;
 }
 
-- (instancetype)initWithName:(NSString *)name type:(TKEncoding *)type ownership:(NSArray<TKEncoding *> *)ownership{
+- (instancetype)initWithName:(NSString *)name type:(NSString *)type ownership:(NSArray<NSString *> *)ownership{
     self = [super init];
     if (self) {
         self.name = name;

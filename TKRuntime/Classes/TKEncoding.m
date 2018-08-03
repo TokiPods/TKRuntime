@@ -9,139 +9,60 @@
 
 @implementation TKEncoding
 
-#pragma mark - Type
-
-+ (TKEncoding *)character{
-    return (TKEncoding *)@"c";
-}
-+ (TKEncoding *)integer{
-    return (TKEncoding *)@"i";
-}
-+ (TKEncoding *)shortint{
-    return (TKEncoding *)@"s";
-}
-+ (TKEncoding *)longint{
-    return (TKEncoding *)@"l";
-}
-+ (TKEncoding *)longlongint{
-    return (TKEncoding *)@"q";
-}
-+ (TKEncoding *)unsignedchar{
-    return (TKEncoding *)@"C";
-}
-+ (TKEncoding *)unsignedint{
-    return (TKEncoding *)@"I";
-}
-+ (TKEncoding *)unsignedshort{
-    return (TKEncoding *)@"S";
-}
-+ (TKEncoding *)unsignedlong{
-    return (TKEncoding *)@"L";
-}
-+ (TKEncoding *)unsignedlonglong{
-    return (TKEncoding *)@"Q";
-}
-+ (TKEncoding *)unsignedfloat{
-    return (TKEncoding *)@"f";
-}
-+ (TKEncoding *)unsigneddouble{
-    return (TKEncoding *)@"d";
-}
-+ (TKEncoding *)boolean{
-    return (TKEncoding *)@"B";
-}
-+ (TKEncoding *)voids{
-    return (TKEncoding *)@"v";
-}
-+ (TKEncoding *)string{
-    return (TKEncoding *)@"*";
-}
-+ (TKEncoding *)object{
-    return (TKEncoding *)@"@";
-}
-+ (TKEncoding *)objectWithClass:(Class)cls{
-    return (TKEncoding *)[NSString stringWithFormat:@"@\"%@\"]", cls];
-}
-+ (TKEncoding *)classes{
-    return (TKEncoding *)@"#";
-}
-+ (TKEncoding *)selector{
-    return (TKEncoding *)@":";
-}
-+ (TKEncoding *)arrayWith:(TKEncoding *)type count:(NSInteger)count{
-    return (TKEncoding *)[NSString stringWithFormat:@"[%d%@]", (int)count, type];
-}
-+ (TKEncoding *)structureWith:(NSString *)name values:(NSArray<TKEncoding *> *)values{
-    
-    return (TKEncoding *)[NSString stringWithFormat:@"{%@=%@}", name, [values componentsJoinedByString:@""]];
-}
-+ (TKEncoding *)unionsWith:(NSString *)name values:(NSArray<TKEncoding *> *)values{
-    return (TKEncoding *)[NSString stringWithFormat:@"{%@=%@}", name, [values componentsJoinedByString:@""]];
-}
-+ (TKEncoding *)typepointWith:(TKEncoding *)type{
-    return (TKEncoding *)[NSString stringWithFormat:@"^%@", type];
-}
-+ (TKEncoding *)bnum{
-    return (TKEncoding *)@"bnum";
-}
-+ (TKEncoding *)unknown{
-    return (TKEncoding *)@"?";
-}
-
 #pragma mark - Method
 
-+ (TKEncoding *)consts{
-    return (TKEncoding *)@"r";
++ (NSString *)consts{
+    return @"r";
 }
-+ (TKEncoding *)ins{
-    return (TKEncoding *)@"n";
++ (NSString *)ins{
+    return @"n";
 }
-+ (TKEncoding *)inouts{
-    return (TKEncoding *)@"N";
++ (NSString *)inouts{
+    return @"N";
 }
-+ (TKEncoding *)outs{
-    return (TKEncoding *)@"o";
++ (NSString *)outs{
+    return @"o";
 }
-+ (TKEncoding *)bycopys{
-    return (TKEncoding *)@"O";
++ (NSString *)bycopys{
+    return @"O";
 }
-+ (TKEncoding *)byrefs{
-    return (TKEncoding *)@"R";
++ (NSString *)byrefs{
+    return @"R";
 }
-+ (TKEncoding *)oneways{
-    return (TKEncoding *)@"V";
++ (NSString *)oneways{
+    return @"V";
 }
 
 #pragma mark - Ownership
 
-+ (TKEncoding *)atomic{
-    return (TKEncoding *)@"";
++ (NSString *)atomic{
+    return @"";
 }
-+ (TKEncoding *)nonatomic{
-    return (TKEncoding *)@"N";
-}
-
-+ (TKEncoding *)assign{
-    return (TKEncoding *)@"";
-}
-+ (TKEncoding *)weak{
-    return (TKEncoding *)@"W";
-}
-+ (TKEncoding *)copy{
-    return (TKEncoding *)@"C";
-}
-+ (TKEncoding *)retain{
-    return (TKEncoding *)@"&";
-}
-+ (TKEncoding *)strong{
-    return (TKEncoding *)@"&";
++ (NSString *)nonatomic{
+    return @"N";
 }
 
-+ (TKEncoding *)readwrite{
-    return (TKEncoding *)@"";
++ (NSString *)assign{
+    return @"";
 }
-+ (TKEncoding *)readonly{
-    return (TKEncoding *)@"R";
++ (NSString *)weak{
+    return @"W";
+}
++ (NSString *)copy{
+    return @"C";
+}
++ (NSString *)retain{
+    return @"&";
+}
++ (NSString *)strong{
+    return @"&";
+}
+
++ (NSString *)readwrite{
+    return @"";
+}
++ (NSString *)readonly{
+    return @"R";
 }
 
 @end

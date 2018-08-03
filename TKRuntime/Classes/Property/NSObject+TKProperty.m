@@ -16,8 +16,8 @@
 }
 
 + (BOOL)addPropertyWithName:(NSString *)name
-                       type:(TKEncoding *)type
-                  ownership:(NSArray<TKEncoding *> *)ownership{
+                       type:(NSString *)type
+                  ownership:(NSArray<NSString *> *)ownership{
     unsigned int propertyWonershipCount = (unsigned int)ownership.count;
     const char * propertyWonership[propertyWonershipCount];
     for (int i = 0; i < propertyWonershipCount; i ++) {

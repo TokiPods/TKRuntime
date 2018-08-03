@@ -16,10 +16,10 @@
 @property(nonatomic, assign, readonly, nullable) objc_property_t property;
 
 @property(nonatomic, strong, readonly) NSString * name;
-@property(nonatomic, strong, readonly) TKEncoding * type;
-@property(nonatomic, strong, readonly) NSArray<TKEncoding *> * ownership;
+@property(nonatomic, strong, readonly) NSString * type;
+@property(nonatomic, strong, readonly) NSArray<NSString *> * ownership;
 
 - (instancetype)initWithProperty:(objc_property_t)property;
-- (instancetype)initWithName:(NSString *)name type:(TKEncoding *)type ownership:(NSArray<TKEncoding *> *)ownership;
+- (instancetype)initWithName:(NSString *)name type:(NSString *)type ownership:(NSArray<NSString *> *)ownership;
 
 @end

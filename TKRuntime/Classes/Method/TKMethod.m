@@ -13,8 +13,8 @@
 
 @property(nonatomic, assign) IMP imp;
 @property(nonatomic, strong) NSString * name;
-@property(nonatomic, strong) TKEncoding * returnType;
-@property(nonatomic, strong) NSArray<TKEncoding *> * argumentTypes;
+@property(nonatomic, strong) NSString * returnType;
+@property(nonatomic, strong) NSArray<NSString *> * argumentTypes;
 
 @end
 
@@ -29,12 +29,12 @@
         SEL sel = method_getName(method);
         self.name = [NSString stringWithUTF8String:sel_getName(sel)];
         self.imp = [self methodForSelector:sel];
-        self.returnType = (TKEncoding *)[NSString stringWithUTF8String:method_copyReturnType(method)];
+        self.returnType = [NSString stringWithUTF8String:method_copyReturnType(method)];
         
-        NSMutableArray<TKEncoding *> * argumentTypes = [NSMutableArray array];
+        NSMutableArray<NSString *> * argumentTypes = [NSMutableArray array];
         unsigned int count = method_getNumberOfArguments(method);
         for (int i = 0; i < count; i++) {
-            [argumentTypes addObject:(TKEncoding *)[NSString stringWithUTF8String:method_copyArgumentType(method, i)]];
+            [argumentTypes addObject:[NSString stringWithUTF8String:method_copyArgumentType(method, i)]];
         }
         self.argumentTypes = [argumentTypes copy];
     }
@@ -42,8 +42,8 @@
 }
 
 - (instancetype)initWithName:(NSString *)name
-                  returnType:(TKEncoding *)returnType
-               argumentTypes:(NSArray<TKEncoding *> *)argumentTypes{
+                  returnType:(NSString *)returnType
+               argumentTypes:(NSArray<NSString *> *)argumentTypes{
     self = [super init];
     if (self) {
         self.name = name;
@@ -55,8 +55,8 @@
 
 - (instancetype)initWithName:(NSString *)name
                          imp:(IMP)imp
-                  returnType:(TKEncoding *)returnType
-                  argumentTypes:(NSArray<TKEncoding *> *)argumentTypes{
+                  returnType:(NSString *)returnType
+                  argumentTypes:(NSArray<NSString *> *)argumentTypes{
     self = [self initWithName:name returnType:returnType argumentTypes:argumentTypes];
     if (self) {
         self.imp = imp;
@@ -66,9 +66,9 @@
 
 - (instancetype)initWithName:(NSString *)name
                    baseClass:(Class)baseClass
-                    baseName:(NSString *_Nullable)baseName
-                  returnType:(TKEncoding *)returnType
-                  argumentTypes:(NSArray<TKEncoding *> *)argumentTypes{
+                    baseName:(NSString *)baseName
+                  returnType:(NSString *)returnType
+                  argumentTypes:(NSArray<NSString *> *)argumentTypes{
     self = [self initWithName:name returnType:returnType argumentTypes:argumentTypes];
     if (self) {
         self.imp = [[baseClass new] methodForSelector:NSSelectorFromString(baseName?:name)];

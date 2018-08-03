@@ -15,13 +15,13 @@
         self.ivar = ivar;
         
         self.name = [NSString stringWithUTF8String:ivar_getName(ivar)];
-        self.type = (TKEncoding *)[NSString stringWithUTF8String:ivar_getTypeEncoding(ivar)];
+        self.type = [NSString stringWithUTF8String:ivar_getTypeEncoding(ivar)];
     }
     return self;
 }
 
 - (instancetype)initWithName:(NSString *)name
-                        type:(TKEncoding *)type{
+                        type:(NSString *)type{
     self = [super init];
     if (self) {
         self.name = name;

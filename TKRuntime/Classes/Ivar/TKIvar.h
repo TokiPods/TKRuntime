@@ -17,12 +17,12 @@
 
 
 @property(nonatomic, strong) NSString * name;
-@property(nonatomic, strong) TKEncoding * type;
+@property(nonatomic, strong) NSString * type;
 
 
 - (instancetype)initWithIvar:(Ivar)ivar;
 
 - (instancetype)initWithName:(NSString *)name
-                        type:(TKEncoding *)type;
+                        type:(NSString *)type;
 
 @end

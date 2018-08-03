@@ -12,4 +12,6 @@
 - (NSString *)uppercaseHeadString;
 - (NSString *)lowercaseHeadString;
 
++ (NSString *)combine:(NSString *)string, ...NS_REQUIRES_NIL_TERMINATION;
+
 @end
